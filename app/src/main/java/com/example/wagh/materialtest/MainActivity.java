@@ -15,7 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
     Button attack;
     ShimmerFrameLayout shimmerFrameLayout;
     LinearLayout linearLayout;
+
+    //for the last one of the day 20th july 2016
+
+    Button b1;
+    TextView tv1;
 
 
     @Override
@@ -36,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //for the last one of the day
+
+        b1=(Button)findViewById(R.id.attack);
+        tv1=(TextView)findViewById(R.id.tv1);
+
+        //continued on the linearlayout onclick
+
+
         ActionBar actionBar=getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -66,6 +83,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 shimmerFrameLayout.stopShimmerAnimation();
+                //yeah one more animation
+
+                YoYo.with(Techniques.FadeIn).duration(2000).playOn(b1);
+
+                //iphone style animation
+                
+                YoYo.with(Techniques.Shake).duration(2000).playOn(tv1);
+
+                //end of the button animation
+
             }
         });
 
